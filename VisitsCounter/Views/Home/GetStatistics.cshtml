@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Site Statistics";
+}
+@model IEnumerable<Visitor>
+
+<table class="table">
+    <tr>
+        <th>Date</th>
+        <th>Visitors</th>
+        <th>Views</th>
+    </tr>
+    @foreach (Visitor visitor in Model)
+    {
+        <tr>
+            <td>@visitor.Date.ToShortDateString()</td>
+            <td>@visitor.Visitors</td>
+            <td>@visitor.Views</td>
+        </tr>
+    }
+</table>
