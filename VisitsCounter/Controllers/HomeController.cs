@@ -16,7 +16,7 @@ namespace VisitsCounter.Controllers
         public async Task<IActionResult> GetStatistics()
         {
             var today = DateTime.Today;
-            var statistic = await _visitors.GetStatisticsByDate(today, today);
+            var statistic = await _visitors.GetStatisticsByDate(today.AddMonths(-1), today);
             return View(statistic);
         }
         public IActionResult Index()
